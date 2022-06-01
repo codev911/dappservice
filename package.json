@@ -1,0 +1,51 @@
+{
+  "name": "dappservice",
+  "version": "0.0.0",
+  "author": "codev911",
+  "license": "ISC",
+  "description": "",
+  "directories": {
+    "test": "test"
+  },
+  "main": "dist/esm/dappservice.js",
+  "types": "dist/types/dappservice.d.ts",
+  "scripts": {
+    "build": "npx -p typescript tsc-silent --project tsconfig.esm.json & tsc-silent --project tsconfig.cjs.json --suppress @",
+    "test": "node test/spec",
+    "pretest": "npm run build"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codev911/dappservice.git"
+  },
+  "exports": {
+    "import": "./dist/esm/dappservice.js",
+    "require": "./dist/cjs/dappservice.js",
+    "default": "./dist/esm/dappservice.js"
+  },
+  "keywords": [
+    "dappservice",
+    "dapp",
+    "ethereum",
+    "ether",
+    "DAO"
+  ],
+  "dependencies": {
+    "rpc-pinger": "^1.0.18",
+    "tsc-silent": "^1.2.2",
+    "typescript": "^4.7.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.2",
+    "@babel/preset-env": "^7.18.2",
+    "rollup": "^2.75.4",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "typescript": "^4.7.2"
+  }
+}
